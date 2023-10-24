@@ -1,4 +1,4 @@
-package com.example.stepappv4.ui.slideshow;
+package com.example.stepappv4.ui.Profile;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,16 +10,16 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.stepappv4.databinding.FragmentSlideshowBinding;
+import com.example.stepappv4.databinding.FragmentProfileBinding;
 
 public class ProfileFragment extends Fragment {
 
-    private FragmentSlideshowBinding binding;
+    private FragmentProfileBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
+        binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         return root;

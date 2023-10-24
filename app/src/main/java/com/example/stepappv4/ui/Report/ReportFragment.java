@@ -17,7 +17,7 @@ import java.util.TimeZone;
 
 
 import com.example.stepappv4.StepAppOpenHelper;
-import com.example.stepappv4.databinding.FragmentGalleryBinding;
+import com.example.stepappv4.databinding.FragmentReportBinding;
 import com.example.stepappv4.R;
 
 public class ReportFragment extends Fragment {
@@ -30,14 +30,14 @@ public class ReportFragment extends Fragment {
     public Button button_delete;
     public TextView completedStepsText;
 
-    private FragmentGalleryBinding binding;
+    private FragmentReportBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         ReportViewModel galleryViewModel =
                 new ViewModelProvider(this).get(ReportViewModel.class);
 
-        binding = FragmentGalleryBinding.inflate(inflater, container, false);
+        binding = FragmentReportBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
 
