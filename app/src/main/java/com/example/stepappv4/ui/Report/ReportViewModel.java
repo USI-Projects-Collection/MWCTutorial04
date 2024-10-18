@@ -1,4 +1,4 @@
-package com.example.stepappv4.ui.Report;
+package com.example.stepappv4.ui.report;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

@@ -6,8 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Toast;
-
-import com.example.stepappv4.R;
+import android.Manifest;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -19,7 +18,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
-import android.Manifest;
 
 import com.example.stepappv4.databinding.ActivityMainBinding;
 
@@ -27,9 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
-
     private static final int REQUEST_ACTIVITY_RECOGNITION_PERMISSION = 45;
-    private boolean runningOorLater = android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.O;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                        .setAction("Action", null)
+                        .setAnchorView(R.id.fab).show();
             }
         });
         DrawerLayout drawer = binding.drawerLayout;
@@ -58,10 +56,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        // Ask for activity recognition permission
-        if (runningOorLater) {
-            getActivityPermission();
-        }
+        getActivityPermission();
+
+
     }
 
     @Override
@@ -78,28 +75,28 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    // Request for permission
+    // Ask for permission
     private void getActivityPermission() {
         if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACTIVITY_RECOGNITION)
                 != PackageManager.PERMISSION_GRANTED)
         {
-            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.ACTIVITY_RECOGNITION},
-                    REQUEST_ACTIVITY_RECOGNITION_PERMISSION);
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.ACTIVITY_RECOGNITION},  REQUEST_ACTIVITY_RECOGNITION_PERMISSION);
         }
-        else
-        {
+        else {
             return;
         }
     }
     @Override
-    public void onRequestPermissionsResult(int requestCode,  @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == REQUEST_ACTIVITY_RECOGNITION_PERMISSION) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 getActivityPermission();
             }
             else {
-                Toast.makeText(this, R.string.step_permission_denied, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,
+                        R.string.step_permission_denied,
+                        Toast.LENGTH_SHORT).show();
             }
         }
     }

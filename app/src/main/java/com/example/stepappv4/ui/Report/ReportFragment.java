@@ -1,36 +1,33 @@
-package com.example.stepappv4.ui.Report;
+package com.example.stepappv4.ui.report;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.stepappv4.R;
+import com.example.stepappv4.StepAppOpenHelper;
+import com.example.stepappv4.databinding.FragmentReportBinding;
+import com.google.android.material.button.MaterialButton;
+
 import java.text.SimpleDateFormat;
 import java.util.TimeZone;
 
-
-import com.example.stepappv4.StepAppOpenHelper;
-import com.example.stepappv4.databinding.FragmentReportBinding;
-import com.example.stepappv4.R;
-
 public class ReportFragment extends Fragment {
 
-    public StepAppOpenHelper stepAppOpenHelper;
-
-    public int todaySteps = 0;
-    public Button button_get_all;
-    public Button button_today;
-    public Button button_delete;
-    public TextView completedStepsText;
-
     private FragmentReportBinding binding;
+    public int todaySteps = 0;
+    public MaterialButton button_get;
+    public MaterialButton button_today;
+    public MaterialButton button_delete;
+    public TextView completedStepsText;
+    public StepAppOpenHelper stepAppOpenHelper;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -40,20 +37,31 @@ public class ReportFragment extends Fragment {
         binding = FragmentReportBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-
-        stepAppOpenHelper = new StepAppOpenHelper(getContext());
-        completedStepsText = (TextView) root.findViewById(R.id.todaySteps_txt);
-
-        // Timestamp
+        //Timestamp
         long timeInMillis = System.currentTimeMillis();
         // Convert the timestamp to date
         SimpleDateFormat jdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
         jdf.setTimeZone(TimeZone.getTimeZone("GMT+2"));
-        final String date = jdf.format(timeInMillis);
-        String currentDay = date.substring(0,10);
+        final String dateTimestamp = jdf.format(timeInMillis);
+        String currentDay = dateTimestamp.substring(0,10);
 
-        // TODO 11 (YOUR TURN): TODAY button
-        button_today = (Button) root.findViewById(R.id.todaySteps_btn);
+
+        stepAppOpenHelper = new StepAppOpenHelper(getContext());
+        completedStepsText = (TextView) root.findViewById(R.id.numCompletedSteps);
+
+        // GET ENTRIES button
+        button_get = (MaterialButton) root.findViewById(R.id.button_get);
+        button_get.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                StepAppOpenHelper.loadRecords(getContext());
+
+            }
+        });
+
+
+        // TODAY button
+        button_today = (MaterialButton) root.findViewById(R.id.button_today);
         button_today.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,25 +71,15 @@ public class ReportFragment extends Fragment {
             }
         });
 
-        // TODO 12 (YOUR TURN): GET ENTRIES button
-        button_get_all = (Button) root.findViewById(R.id.allSteps_btn);
-        button_get_all.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                stepAppOpenHelper.loadRecords(getContext());
-
-            }
-        });
-
-        // TODO 13 (YOUR TURN): button
-        button_delete = (Button) root.findViewById(R.id.deleteSteps_btn);
+        // DELETE button
+        button_delete = (MaterialButton) root.findViewById(R.id.button_delete);
         button_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 stepAppOpenHelper.deleteRecords(getContext());
-
             }
         });
+
 
         return root;
     }
