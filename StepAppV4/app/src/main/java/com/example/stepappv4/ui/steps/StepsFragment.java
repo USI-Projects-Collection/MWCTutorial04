@@ -72,7 +72,7 @@ public class StepsFragment extends Fragment {
                     {
                         //TODO 20 (Your Turn): Pass the progress to the constructor of the listener class
 
-                        sensorListener = new StepCounterListener(getContext(), stepsTextView);
+                        sensorListener = new StepCounterListener(getContext(), stepsTextView, progressBar);
 
                         sensorManager.registerListener(sensorListener, accSensor, SensorManager.SENSOR_DELAY_NORMAL);
                         Toast.makeText(getContext(), R.string.start_text, Toast.LENGTH_LONG).show();
