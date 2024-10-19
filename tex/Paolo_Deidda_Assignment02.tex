@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{here}
+\usepackage{subcaption}
+\usepackage{tikz}
+
+% Set page size and margins
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+
+% Remove section numbering
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{}
+
+\newcommand{\code}[1]{{\tt #1}}
+\newcommand\blankpage{%
+	\null
+	\thispagestyle{empty}%
+	\addtocounter{page}{-1}%
+	\newpage}
+
+\title{
+	\normalfont\normalsize
+	\textsc{Mobile and Wearable Computing SA 2024-2025\\%
+	Universit\`a della Svizzera italiana}\\
+	\vspace{25pt}
+	\rule{\linewidth}{0.5pt}\\
+	\vspace{20pt}
+	{\huge Assignment 2}\\
+	\vspace{12pt}
+	\rule{\linewidth}{1pt}\\
+	\vspace{12pt}
+}
+
+\author{
+  Paolo Deidda \\
+  \text{paolo.deidda@usi.ch} \\ 
+  \url{https://github.com/USI-Projects-Collection/MWCTutorial04.git}
+}
+
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\newpage
+\include{exs/ex1}
+
+\newpage
+\include{exs/ex2}
+
+\newpage
+\include{exs/ex3}
+
+\end{document}
