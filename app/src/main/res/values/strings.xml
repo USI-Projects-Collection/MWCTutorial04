@@ -33,4 +33,6 @@
     <string name="get_entries">Get Entries</string>
     <string name="completed_steps_today">Completed steps today:</string>
     <string name="today">Today</string>
+
+    <string name="switch_DL_mode">Light Mode</string>
 </resources>
