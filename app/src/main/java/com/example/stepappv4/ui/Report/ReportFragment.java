@@ -65,7 +65,7 @@ public class ReportFragment extends Fragment {
         button_today.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int numberOfSteps = stepAppOpenHelper.loadSingleRecord(getContext(), currentDay);
+                int numberOfSteps = StepAppOpenHelper.loadSingleRecord(getContext(), currentDay);
                 Log.d("RETRIEVED STEPS TODAY: ", String.valueOf(numberOfSteps));
                 completedStepsText.setText(String.valueOf(numberOfSteps));
             }

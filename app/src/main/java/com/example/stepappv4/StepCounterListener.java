@@ -51,7 +51,8 @@ public class  StepCounterListener implements SensorEventListener {
 
 
     @Override
-    public void onSensorChanged(SensorEvent sensorEvent) {
+    public void onSensorChanged(SensorEvent sensorEvent)
+    {
         // TODO 8: Check the type of the sensor, this is helpful in case of multiple sensors (you will need for the next assignment)
         switch (sensorEvent.sensor.getType())
         {
@@ -98,7 +99,8 @@ public class  StepCounterListener implements SensorEventListener {
                 // TODO (Assignment 02): Use the STEP_DETECTOR  to count the number of steps
                 // TODO (Assignment 02): The STEP_DETECTOR is triggered every time a step is detected
                 // TODO (Assignment 02): The sensorEvent.values of STEP_DETECTOR has only one value for the detected step count
-
+                countSteps(sensorEvent.values[0]);
+                break;
         }
     }
     @Override
@@ -134,20 +136,30 @@ public class  StepCounterListener implements SensorEventListener {
                 stepCountsView.setText(String.valueOf(accStepCounter));
 
                 //TODO 17: Add the new steps to the database
-                saveStepInDatabase();
+//                saveStepInDatabase();
 
                 //TODO 19 (Your Turn): Set the progress of the CircularProgressIndicator variable
-                progressBar.setProgress(accStepCounter);
+//                progressBar.setProgress(accStepCounter);
 
 
             }
         }
     }
 
+//    counts the number of steps from the Android STEP_DETECTOR.
     private void countSteps(float step)
     {
+        accStepCounter += step;
 
+        Log.d("ACC STEPS: ", String.valueOf(accStepCounter));
+
+        // update View
+        stepCountsView.setText(String.valueOf(accStepCounter));
+        progressBar.setProgress(accStepCounter);
+
+        saveStepInDatabase();
     }
+
     private void saveStepInDatabase()
     {
         //get current Timestamp
