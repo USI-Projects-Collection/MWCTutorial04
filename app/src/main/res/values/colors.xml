@@ -150,4 +150,6 @@
     <color name="light_md_theme_surfaceContainer_highContrast">#EAEFE9</color>
     <color name="light_md_theme_surfaceContainerHigh_highContrast">#E4EAE3</color>
     <color name="light_md_theme_surfaceContainerHighest_highContrast">#DEE4DE</color>
+
+
 </resources>
