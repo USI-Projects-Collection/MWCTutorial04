@@ -30,6 +30,7 @@ public class StepsFragment extends Fragment {
     private FragmentStepsBinding binding;
     private MaterialButtonToggleGroup materialButtonToggleGroup;
     private TextView stepsTextView;
+    CircularProgressIndicator progressBar;
     private int stepsCounter = 0;
     // TODO 1: Create an object from Sensor class
     private Sensor accSensor;
@@ -47,7 +48,7 @@ public class StepsFragment extends Fragment {
         binding = FragmentStepsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        CircularProgressIndicator progressBar = (CircularProgressIndicator)  root.findViewById(R.id.progressBar);
+        progressBar = (CircularProgressIndicator)  root.findViewById(R.id.progressBar);
         progressBar.setMax(100);
         progressBar.setProgress(stepsCounter);
 
