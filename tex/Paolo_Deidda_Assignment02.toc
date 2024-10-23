@@ -4,3 +4,5 @@
 \contentsline {subsection}{\numberline {2.2}Implement Dark Theme}{4}{subsection.2.2}%
 \contentsline {section}{\numberline {3}Exercise 3 – Step Counter}{5}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Android STEP\_DETECTOR}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Update Circulat Progress Bar}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Persistant Step Count}{6}{subsection.3.3}%

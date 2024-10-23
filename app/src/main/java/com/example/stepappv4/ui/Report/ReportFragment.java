@@ -80,7 +80,7 @@ public class ReportFragment extends Fragment {
                 TextView stepsTextView = (TextView) root.findViewById(R.id.stepsCount_textview);
                 CircularProgressIndicator progressBar = (CircularProgressIndicator) root.findViewById(R.id.progressBar);
 
-                StepAppOpenHelper.deleteRecords(getContext(), stepsTextView, progressBar);
+                StepAppOpenHelper.deleteRecords(getContext());
             }
         });
 

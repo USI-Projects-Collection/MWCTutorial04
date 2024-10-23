@@ -152,11 +152,11 @@ public class  StepCounterListener implements SensorEventListener {
 
         Log.d("ACC STEPS: ", String.valueOf(accStepCounter));
 
-        // update View
+        saveStepInDatabase();
+
+        // update View ex 3.2
         stepCountsView.setText(String.valueOf(accStepCounter));
         progressBar.setProgress(accStepCounter);
-
-        saveStepInDatabase();
     }
 
     private void saveStepInDatabase()

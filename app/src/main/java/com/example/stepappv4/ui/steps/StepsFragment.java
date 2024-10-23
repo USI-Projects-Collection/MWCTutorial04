@@ -96,17 +96,17 @@ public class StepsFragment extends Fragment {
         });
 
 
-        //Timestamp
         long timeInMillis = System.currentTimeMillis();
-
         SimpleDateFormat jdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
         jdf.setTimeZone(TimeZone.getTimeZone("GMT+2"));
         final String dateTimestamp = jdf.format(timeInMillis);
         String currentDay = dateTimestamp.substring(0,10);
 
+        // Load the number of steps from the database
         int numberOfSteps = StepAppOpenHelper.loadSingleRecord(getContext(), currentDay);
         stepsTextView.setText(String.valueOf(numberOfSteps));
         progressBar.setProgress(numberOfSteps);
+
         return root;
     }
 
