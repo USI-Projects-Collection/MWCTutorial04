@@ -56,44 +56,44 @@ public class  StepCounterListener implements SensorEventListener {
         // TODO 8: Check the type of the sensor, this is helpful in case of multiple sensors (you will need for the next assignment)
         switch (sensorEvent.sensor.getType())
         {
-//            case Sensor.TYPE_LINEAR_ACCELERATION:
-//
-//                // TODO 9: Get the raw acc. sensor data
-//                float x = sensorEvent.values[0];
-//                float y = sensorEvent.values[1];
-//                float z = sensorEvent.values[2];
-//
-//                // TODO 10: Log the raw acc. sensor data and the event timestamp
-//
-//                long currentTimeInMilliSecond = System.currentTimeMillis();
-//                long timeUntilSensorEvent =(SystemClock.elapsedRealtimeNanos()  - sensorEvent.timestamp )/1000000;
-//
-//                long SensorEventTimestampInMilliSecond =  currentTimeInMilliSecond - timeUntilSensorEvent;
-//
-//                SimpleDateFormat sensorEventTimestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//                sensorEventTimestamp.setTimeZone(TimeZone.getTimeZone("GMT+2"));
-//
-//                String sensorEventDate = sensorEventTimestamp.format(SensorEventTimestampInMilliSecond);
-//
-//
-//
-//                if ((currentTimeInMilliSecond - lastSensorUpdate) > 1000)
-//                {
-//                    lastSensorUpdate = currentTimeInMilliSecond;
-//                    String sensorRawValues = "  x = "+ String.valueOf(x) +"  y = "+ String.valueOf(y) +"  z = "+ String.valueOf(z);
-//                    Log.d("Acc. Event", "last sensor update at " + String.valueOf(sensorEventDate) + sensorRawValues);
-//                }
-//
-//                // TODO 11 (YOUR TURN): Compute the magnitude for the acceleration and put it in accMag
-//                accMag = Math.sqrt(Math.pow(x,2) + Math.pow(y,2) + Math.pow(z,2));
-//
-//
-//                // TODO 12 (YOUR TURN): Store the magnitude for the acceleration in accSeries
-//                accSeries.add((int) accMag);
-//
-//                peakDetection();
-//
-//                break;
+            case Sensor.TYPE_LINEAR_ACCELERATION:
+
+                // TODO 9: Get the raw acc. sensor data
+                float x = sensorEvent.values[0];
+                float y = sensorEvent.values[1];
+                float z = sensorEvent.values[2];
+
+                // TODO 10: Log the raw acc. sensor data and the event timestamp
+
+                long currentTimeInMilliSecond = System.currentTimeMillis();
+                long timeUntilSensorEvent =(SystemClock.elapsedRealtimeNanos()  - sensorEvent.timestamp )/1000000;
+
+                long SensorEventTimestampInMilliSecond =  currentTimeInMilliSecond - timeUntilSensorEvent;
+
+                SimpleDateFormat sensorEventTimestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                sensorEventTimestamp.setTimeZone(TimeZone.getTimeZone("GMT+2"));
+
+                String sensorEventDate = sensorEventTimestamp.format(SensorEventTimestampInMilliSecond);
+
+
+
+                if ((currentTimeInMilliSecond - lastSensorUpdate) > 1000)
+                {
+                    lastSensorUpdate = currentTimeInMilliSecond;
+                    String sensorRawValues = "  x = "+ String.valueOf(x) +"  y = "+ String.valueOf(y) +"  z = "+ String.valueOf(z);
+                    Log.d("Acc. Event", "last sensor update at " + String.valueOf(sensorEventDate) + sensorRawValues);
+                }
+
+                // TODO 11 (YOUR TURN): Compute the magnitude for the acceleration and put it in accMag
+                accMag = Math.sqrt(Math.pow(x,2) + Math.pow(y,2) + Math.pow(z,2));
+
+
+                // TODO 12 (YOUR TURN): Store the magnitude for the acceleration in accSeries
+                accSeries.add((int) accMag);
+
+                peakDetection();
+
+                break;
 
             case Sensor.TYPE_STEP_DETECTOR:
                 // TODO (Assignment 02): Use the STEP_DETECTOR  to count the number of steps
@@ -182,6 +182,4 @@ public class  StepCounterListener implements SensorEventListener {
         SQLiteDatabase database = databaseOpenHelper.getWritableDatabase();
         long id = database.insert(StepAppOpenHelper.TABLE_NAME, null, values);
     }
-
-
 }

@@ -62,8 +62,6 @@ public class StepAppOpenHelper extends SQLiteOpenHelper {
         database.close();
 
         Toast.makeText(context, "Deleted " + String.valueOf(numberDeletedRecords) + " steps", Toast.LENGTH_SHORT ).show();
-
-//        database.close();
     }
 
     // load records from a single day

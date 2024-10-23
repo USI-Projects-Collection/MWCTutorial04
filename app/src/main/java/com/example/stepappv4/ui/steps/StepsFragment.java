@@ -87,8 +87,6 @@ public class StepsFragment extends Fragment {
                         Toast.makeText(getContext(), R.string.acc_sensor_not_available, Toast.LENGTH_LONG).show();
                     }
 
-
-
                 }
                 else if (checkedId == R.id.toggleStop_btn) {
                     sensorManager.unregisterListener(sensorListener);
@@ -109,7 +107,6 @@ public class StepsFragment extends Fragment {
         int numberOfSteps = StepAppOpenHelper.loadSingleRecord(getContext(), currentDay);
         stepsTextView.setText(String.valueOf(numberOfSteps));
         progressBar.setProgress(numberOfSteps);
-
         return root;
     }
 
