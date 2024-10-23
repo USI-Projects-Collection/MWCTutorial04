@@ -282,6 +282,12 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 OUTPUT Paolo_Deidda_Assignment02.toc
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+INPUT ../app/src/main/java/com/example/stepappv4/ui/steps/StepsFragment.java
+INPUT ../app/src/main/java/com/example/stepappv4/ui/steps/StepsFragment.java
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
+INPUT ../app/src/main/java/com/example/stepappv4/ui/steps/StepsFragment.java
 INPUT /usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT ./exs/ex1.tex
 INPUT ./exs/ex1.tex
@@ -289,8 +295,6 @@ OUTPUT exs/ex1.aux
 INPUT ./exs/ex1.tex
 INPUT ./exs/ex1.tex
 INPUT exs/ex1.tex
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT ./exs/ex2.tex
@@ -327,7 +331,6 @@ INPUT ./res/img/dark_theme_switch.png
 INPUT ./res/img/dark_theme_switch.png
 INPUT ../app/src/main/java/com/example/stepappv4/ui/slideshow/ProfileFragment.java
 INPUT ../app/src/main/java/com/example/stepappv4/ui/slideshow/ProfileFragment.java
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
 INPUT ../app/src/main/java/com/example/stepappv4/ui/slideshow/ProfileFragment.java
 INPUT ./res/img/darkMode1.png
 INPUT ./res/img/darkMode1.png
