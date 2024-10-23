@@ -22,13 +22,11 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        // Find the switch in the fragment's layout
         darkModeSwitch = root.findViewById(R.id.switch1);
 
         // Set the switch text based on the current theme
         updateSwitchText();
 
-        // Set up the listener for the switch
         darkModeSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 // Enable dark mode and update the text
@@ -44,7 +42,6 @@ public class ProfileFragment extends Fragment {
         return root;
     }
 
-    // Method to set the initial text of the switch based on the current mode
     private void updateSwitchText() {
         int currentNightMode = getResources().getConfiguration().uiMode & android.content.res.Configuration.UI_MODE_NIGHT_MASK;
         if (currentNightMode == android.content.res.Configuration.UI_MODE_NIGHT_YES) {

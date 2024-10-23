@@ -13,16 +13,34 @@
 \usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=black]{hyperref}
 
-% Remove section numbering
-\renewcommand{\thesection}{}
-\renewcommand{\thesubsection}{}
+%% Remove section numbering
+% \renewcommand{\thesection}{}
+%\renewcommand{\thesubsection}{}
+%
+%\newcommand{\code}[1]{{\tt #1}}
+%\newcommand\blankpage{%
+%	\null
+%	\thispagestyle{empty}%
+%	\addtocounter{page}{-1}%
+%	\newpage}
 
-\newcommand{\code}[1]{{\tt #1}}
-\newcommand\blankpage{%
-	\null
-	\thispagestyle{empty}%
-	\addtocounter{page}{-1}%
-	\newpage}
+
+%%%% Defin style for code %%%%
+\lstdefinestyle{mystyle}{
+    language=Java,
+	numbers=left,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    breaklines=true
+    frame=single, % Aggiunge il bordo
+    %frameround=tttt, % Angoli arrotondati
+    backgroundcolor=\color{lightgray!20}, % Sfondo leggermente grigio
+    rulecolor=\color{black} % Colore del bordo
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{
 	\normalfont\normalsize

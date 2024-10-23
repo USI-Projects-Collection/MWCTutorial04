@@ -15,6 +15,7 @@ import com.example.stepappv4.R;
 import com.example.stepappv4.StepAppOpenHelper;
 import com.example.stepappv4.databinding.FragmentReportBinding;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.progressindicator.CircularProgressIndicator;
 
 import java.text.SimpleDateFormat;
 import java.util.TimeZone;
@@ -76,7 +77,10 @@ public class ReportFragment extends Fragment {
         button_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                stepAppOpenHelper.deleteRecords(getContext());
+                TextView stepsTextView = (TextView) root.findViewById(R.id.stepsCount_textview);
+                CircularProgressIndicator progressBar = (CircularProgressIndicator) root.findViewById(R.id.progressBar);
+
+                StepAppOpenHelper.deleteRecords(getContext(), stepsTextView, progressBar);
             }
         });
 

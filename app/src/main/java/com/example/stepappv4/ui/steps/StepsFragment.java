@@ -60,8 +60,8 @@ public class StepsFragment extends Fragment {
         // TODO 3: Get an instance of sensor manager
         sensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
         // TODO 4: Assign ACC. sensor
-//        accSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
-        accSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
+        accSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
+//        accSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
 
 
         // Toggle group button
@@ -115,4 +115,5 @@ public class StepsFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
 }

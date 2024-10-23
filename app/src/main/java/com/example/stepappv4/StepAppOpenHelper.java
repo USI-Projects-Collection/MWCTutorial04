@@ -5,8 +5,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
+
+import com.google.android.material.progressindicator.CircularProgressIndicator;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -62,6 +65,19 @@ public class StepAppOpenHelper extends SQLiteOpenHelper {
         database.close();
 
         Toast.makeText(context, "Deleted " + String.valueOf(numberDeletedRecords) + " steps", Toast.LENGTH_SHORT ).show();
+    }
+
+    public static void deleteRecords(Context context, TextView stepsTextView, CircularProgressIndicator progressBar){
+        StepAppOpenHelper databaseHelper = new StepAppOpenHelper(context);
+        SQLiteDatabase database = databaseHelper.getWritableDatabase();
+        int numberDeletedRecords = 0;
+
+        numberDeletedRecords = database.delete(StepAppOpenHelper.TABLE_NAME, null, null);
+        database.close();
+
+        Toast.makeText(context, "Deleted " + String.valueOf(numberDeletedRecords) + " steps", Toast.LENGTH_SHORT ).show();
+        stepsTextView.setText("0");
+        progressBar.setProgress(0);
     }
 
     // load records from a single day
