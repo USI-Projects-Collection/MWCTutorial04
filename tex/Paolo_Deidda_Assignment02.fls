@@ -350,6 +350,12 @@ OUTPUT exs/ex3.aux
 INPUT ./exs/ex3.tex
 INPUT ./exs/ex3.tex
 INPUT exs/ex3.tex
+INPUT ../app/src/main/java/com/example/stepappv4/StepCounterListener.java
+INPUT ../app/src/main/java/com/example/stepappv4/StepCounterListener.java
+INPUT ../app/src/main/java/com/example/stepappv4/StepCounterListener.java
+INPUT ../app/src/main/java/com/example/stepappv4/StepCounterListener.java
+INPUT ../app/src/main/java/com/example/stepappv4/StepCounterListener.java
+INPUT ../app/src/main/java/com/example/stepappv4/StepCounterListener.java
 INPUT Paolo_Deidda_Assignment02.aux
 INPUT ./exs/ex1.aux
 INPUT ./exs/ex1.aux

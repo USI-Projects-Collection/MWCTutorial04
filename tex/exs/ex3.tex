@@ -4,4 +4,24 @@
 
 First of all I modified the variable \texttt{accSensor} in the \texttt{StepsFragment} class to be of type:\\ \texttt{Sensor.TYPE\_STEP\_DETECTOR}. I could have easly have defined another variable but I wanted to make sure that all the counts were updted thanks to this sensor and not the previsouly used\\ \texttt{Sensor.TYP\_LINEAR\_ACCELERATION}.
 
+\begin{verbatim}
+    accSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
+\end{verbatim}
 
+Then I moved to the \texttt{StepCounterListener} class and mofied the \texttt{onSensorChanged} method to call the \texttt{countSteps} method. 
+
+\lstinputlisting[
+    firstline=101, 
+    lastline=103, 
+    firstnumber=101,
+    caption=\texttt{\codepath/StepCounterListener.java}
+]{\codepath/StepCounterListener.java}
+
+\lstinputlisting[
+    firstline=150, 
+    lastline=161, 
+    firstnumber=150,
+    caption=\texttt{\codepath/StepCounterListener.java}
+]{\codepath/StepCounterListener.java}
+
+This method is used to update the step count, the step count text view and the step count progress bar (for the )

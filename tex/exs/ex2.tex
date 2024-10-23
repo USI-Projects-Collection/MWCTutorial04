@@ -14,11 +14,11 @@
         
         \begin{figure}[H]
             \centering
-            \includegraphics[width=0.15\textwidth]{res/img/icon1.png}
+            \includegraphics[width=0.20\textwidth]{res/img/icon1.png}
             \hspace{0.05\textwidth}
-            \includegraphics[width=0.15\textwidth]{res/img/icon2.png}      
+            \includegraphics[width=0.20\textwidth]{res/img/icon2.png}      
             \hspace{0.05\textwidth}
-            \includegraphics[width=0.15\textwidth]{res/img/icon3.png}
+            \includegraphics[width=0.20\textwidth]{res/img/icon3.png}
             \caption{Generated Icons with Different Resolutions and Shapes}
             \label{fig:ex2_2.2}
         \end{figure}
@@ -33,7 +33,7 @@
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.15\textwidth]{res/img/dark_theme_switch.png}
+        \includegraphics[width=0.30\textwidth]{res/img/dark_theme_switch.png}
         \caption{Switch for toggling between Light and Dark Modes}
         \label{fig:ex2_3}
     \end{figure}
@@ -42,7 +42,12 @@
 
     The relevant code for the theme switching logic is shown below:
 
-    \lstinputlisting[firstline=45, lastline=56, firstnumber=45]{../app/src/main/java/com/example/stepappv4/ui/slideshow/ProfileFragment.java}
+    \lstinputlisting[
+        firstline=45, 
+        lastline=56, 
+        firstnumber=45,
+        caption=\texttt{\codepath/ui/slideshow/ProfileFragment.java}
+    ]{\codepath/ui/slideshow/ProfileFragment.java}
 
     Additionally, I ensured that the \texttt{colors.xml} file contained separate color definitions for both light and dark modes . This file is located in the \texttt{res/values} and \texttt{res/values-night} directories for light and dark modes, respectively. Same thing I had to do for the Themes, this prevented the app from changing layout changes. The following figures are some screenshots of the app in dark mode (see Figure~\ref{fig:ex2_2.4}).
 
@@ -53,6 +58,6 @@
         \includegraphics[width=0.15\textwidth]{res/img/darkMode2.png}      
         \hspace{0.05\textwidth}
         \includegraphics[width=0.15\textwidth]{res/img/darkMode3.png}
-        \caption{Generated Icons with Different Resolutions and Shapes}
+        \caption{App Screenshots in Dark Mode}
         \label{fig:ex2_2.4}
     \end{figure}
