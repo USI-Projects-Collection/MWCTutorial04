@@ -4,42 +4,41 @@
 \usepackage{here}
 \usepackage{subcaption}
 \usepackage{tikz}
-
-% Set page size and margins
-\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
-
-% Useful packages
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=black]{hyperref}
 
-%% Remove section numbering
+% Set page size and margins
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% % Remove section numbering
 % \renewcommand{\thesection}{}
-%\renewcommand{\thesubsection}{}
-%
-%\newcommand{\code}[1]{{\tt #1}}
-%\newcommand\blankpage{%
-%	\null
-%	\thispagestyle{empty}%
-%	\addtocounter{page}{-1}%
-%	\newpage}
+% \renewcommand{\thesubsection}{}
+
+% \newcommand{\code}[1]{{\tt #1}}
+% \newcommand\blankpage{%
+% 	\null
+% 	\thispagestyle{empty}%
+% 	\addtocounter{page}{-1}%
+% 	\newpage}
 
 
-%%%% Defin style for code %%%%
+%%%% Define style for code %%%%
 \lstdefinestyle{mystyle}{
     language=Java,
 	numbers=left,
     basicstyle=\ttfamily\footnotesize,
     keywordstyle=\color{blue},
     commentstyle=\color{gray},
-    stringstyle=\color{red},
+    stringstyle=\color{brown},
     showstringspaces=false,
-    breaklines=true
+    breaklines=true,
     frame=single, % Aggiunge il bordo
-    %frameround=tttt, % Angoli arrotondati
+    frameround=tttt, % Angoli arrotondati
     backgroundcolor=\color{lightgray!20}, % Sfondo leggermente grigio
-    rulecolor=\color{black} % Colore del bordo
+    rulecolor=\color{black}, % Colore del bordo
 }
+\lstset{style=mystyle} % stile definito come default
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{
@@ -66,6 +65,9 @@
 \maketitle
 
 \tableofcontents
+
+\section*{Important notes}
+asdfasdf
 
 \newpage
 \include{exs/ex1}
